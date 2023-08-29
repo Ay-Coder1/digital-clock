@@ -128,16 +128,16 @@ function choose(clock, items) {
         if (clock.classList.contains(klass(styles[i]))) return styles[i]
       }
     }
-    function click(e) {
-      for (var i = 0; i < styles.length; i++) {
-        if (clock.classList.contains(klass(styles[i]))) {
-          clock.classList.remove(klass(styles[i]))
-          clock.classList.add(klass(styles[(i + 1) % styles.length]))
-          break
-        }
+      function click(e) {
+          for (var i = 0; i < styles.length; i++) {
+              if (clock.classList.contains(klass(styles[i]))) {
+                  clock.classList.remove(klass(styles[i]))
+                  clock.classList.add(klass(styles[(i + 1) % styles.length]))
+                  break
+              }
+          }
+          update()
+          e.preventDefault()
       }
-      update()
-      e.preventDefault()
-    }
-  })
-}
+    })
+  }
